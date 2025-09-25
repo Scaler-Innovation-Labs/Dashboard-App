@@ -1,50 +1,125 @@
-# Welcome to your Expo app 👋
+# SST Dashboard (Mobile App)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<div align="center">
 
-## Get started
+<img alt="Expo" src="https://img.shields.io/badge/Expo-SDK_54-000?logo=expo&logoColor=white" />
+<img alt="React Native" src="https://img.shields.io/badge/React%20Native-0.81-61dafb?logo=react" />
+<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white" />
+<img alt="pnpm" src="https://img.shields.io/badge/pnpm-managed-orange?logo=pnpm" />
+<img alt="Lint" src="https://img.shields.io/badge/ESLint-9-blue?logo=eslint" />
 
-1. Install dependencies
+</div>
 
-   ```bash
-   npm install
-   ```
+## Project Overview
 
-2. Start the app
+SST Students Dashboard (mobile) is the app counterpart to the web dashboard. This repository currently contains a fresh Expo Router setup using React Native, TypeScript, Tailwind (via NativeWind), and Gluestack UI utilities for theming. The default screen renders a welcome message and a reusable Box component.
 
-   ```bash
-   npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+Dashboard-App/
+├── app/
+│   ├── _layout.tsx
+│   └── index.tsx
+├── assets/
+│   └── images/
+├── components/
+│   └── ui/
+│       ├── box/
+│       └── gluestack-ui-provider/
+├── .expo/
+├── app.json
+├── babel.config.js
+├── eslint.config.js
+├── expo-env.d.ts
+├── global.css
+├── metro.config.js
+├── nativewind-env.d.ts
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Key Directories Explained
 
-## Learn more
+- `app/` – Expo Router file-based routes
+  - `_layout.tsx` – Root layout using `Stack`
+  - `index.tsx` – Home screen with Tailwind classes and a `Box` component
+- `components/ui/box/` – Cross‑platform Box primitive (`View`/`div`) with NativeWind styling
+- `components/ui/gluestack-ui-provider/` – Theme variables (light/dark) and providers for overlay/toast
+- `assets/images/` – App icons, splash, and example images
 
-To learn more about developing your project with Expo, look at the following resources:
+## Tech Stack
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Framework: Expo (Router)
+- Language: TypeScript
+- UI: React Native + NativeWind (Tailwind CSS)
+- Theming: Gluestack UI utilities with CSS variables
+- Navigation: Expo Router `Stack`
+- Platforms: Android, iOS, Web (via `react-native-web`)
+- Package Manager: pnpm
+- Linting: ESLint 9 (Expo config)
 
-## Join the community
+## Getting Started
 
-Join our community of developers creating universal apps.
+Ready to contribute or set up the project locally? Check out our detailed setup guide:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**[View Contribution Guide](./CONTRIBUTING.md)**
+
+The contributing guide includes:
+
+- Complete installation instructions
+- Development workflow
+- Expo Setup on Mobile devices
+- Code standards and guidelines
+- Pull request process
+- Commit conventions
+
+## Quick Start
+
+Prerequisites: Node.js 18+, pnpm
+
+```bash
+# Clone the repository
+git clone https://github.com/Scaler-Innovation-Labs/Dashboard-App.git
+cd Dashboard-App
+
+# Install dependencies
+pnpm install
+
+# Start the development server
+pnpm start
+```
+
+When the server is running, use the prompts to open:
+
+- Android emulator or device
+- iOS simulator or device
+- Web browser (static output configured)
+
+## Available Scripts
+
+- `pnpm start` – Start Expo dev server
+- `pnpm android` – Start and open on Android
+- `pnpm ios` – Start and open on iOS
+- `pnpm web` – Start and open in web
+- `pnpm lint` – Run ESLint
+
+## Configuration Highlights
+
+- `tailwind.config.js` – Tailwind with `nativewind/preset`, dark mode via class, color tokens mapped to CSS variables
+- `metro.config.js` – NativeWind integration loading `global.css`
+- `babel.config.js` – Module resolver (`@` → project root), NativeWind and Worklets plugins
+- `app.json` – Expo app config (icons, splash, platform settings, typed routes, React Compiler)
+
+## Current UI
+
+- Home screen with a welcome message
+- Reusable `Box` component styled with NativeWind
+
+## License
+
+No license specified yet.
