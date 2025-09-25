@@ -48,8 +48,9 @@ Dashboard-App/
 - `app/` – Expo Router file-based routes
   - `_layout.tsx` – Root layout using `Stack`
   - `index.tsx` – Home screen with Tailwind classes and a `Box` component
-- `components/ui/box/` – Cross‑platform Box primitive (`View`/`div`) with NativeWind styling
-- `components/ui/gluestack-ui-provider/` – Theme variables (light/dark) and providers for overlay/toast
+- `components/ui/` – Reusable UI components from Gluestack
+  - `components/ui/box/` – Cross‑platform Box primitive from Gluestack components (`View`/`div`) with NativeWind styling
+  - `components/ui/gluestack-ui-provider/` – Theme variables (light/dark) and providers for overlay/toast
 - `assets/images/` – App icons, splash, and example images
 
 ## Tech Stack
